@@ -1,11 +1,11 @@
 const inquirer = require("inquirer");
 
-const render = require("./lib/HTMLrender");
+const render = require("./lib/htmlrender");
 
 const Manager = require("./lib/constructors/Manager");
 const Engineer = require("./lib/constructors/Engineer");
 
-const teamMembers = [
+const teamMates = [
 //   new Manager("Manny", 1, "manny@heiscool.com", 200),
 //   new Engineer("Chaz", 2, "chaz@heiscool.com", "viachaz"),
 //   new Intern("vas", 3, "vas@heiscool.com", "UofA"),
@@ -37,7 +37,7 @@ function createManager () {
 
     ]).then(function (answers) {
         const manager = new Manager(answers.name, parseInt(answers.id), answers.email, parseInt(answers.office));
-        teamMembers.push(manager);
+        teamMates.push(manager);
         addMember();
     });
 }
@@ -94,7 +94,7 @@ function createEngineer () {
 
     ]).then(function (answers) {
         const engineer = new Engineer(answers.name, parseInt(answers.id), answers.email, answers.github);
-        teamMembers.push(engineer);
+        teamMates.push(engineer);
         addMember();
     });
 
@@ -125,7 +125,7 @@ function createIntern () {
 
     ]).then(function (answers) {
         const intern = new Intern(answers.name, parseInt(answers.id), answers.email, answers.school);
-        teamMembers.push(intern);
+        teamMates.push(intern);
         addMember();
     });
 
