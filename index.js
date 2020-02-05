@@ -63,7 +63,7 @@ function addMember() {
             createIntern();
         }
         else {
-            render(teamMembers);
+            render(teamMates);
         }
 
     })
